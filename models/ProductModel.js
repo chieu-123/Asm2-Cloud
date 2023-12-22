@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var productChema = mongoose.Schema({
+var productSchema = mongoose.Schema({
     productname : {
         type: String,
         required: true,
@@ -26,5 +26,5 @@ var productChema = mongoose.Schema({
     }
 });
 
-var ProductModel = mongoose.model('products', productChema); 
+var ProductModel = mongoose.model('products', productSchema); 
 module.exports = ProductModel;

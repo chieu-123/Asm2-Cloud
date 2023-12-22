@@ -30,7 +30,6 @@ router.get('/delete/:id', async (req, res) => {
     var id = req.params.id;
     var category = await CategoryModel.findById(id);
     await CategoryModel.deleteOne(category);
- 
     res.redirect('/category');
 })
 

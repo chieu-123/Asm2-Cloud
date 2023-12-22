@@ -1,4 +1,6 @@
+
 <div class="main-content">
+
    <div class="row">
       <div class="col-md-2">
       </div>
@@ -7,12 +9,12 @@
             <div class="table-title">
                <div class="row">
                   <div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
-                     <h2 class="ml-lg-2">Manage Category</h2>
+                     <h2 class="ml-lg-2">Manage User</h2>
                   </div>
                   <div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
-                     <a href="/category/add" class="btn btn-success" data-toggle="modal">
+                     <a href="/user/add" class="btn btn-success" data-toggle="modal">
                         <i class="material-icons">&#xE147;</i>
-                        <span>Add New Category</span>
+                        <span>Add New User</span>
                      </a>
                   </div>
                </div>
@@ -24,27 +26,30 @@
                      <th><span class="custom-checkbox">
                            <input type="checkbox" id="selectAll">
                            <label for="selectAll"></label></th>
-                     <th>Category Name</th>
-                     <th>Description</th>
-                     <th>Menu</th>
+                     <th>User Name</th>
+                     <th>User Email</th>
+                     <th>User Password</th>
+                     <th>User Role</th>
                   </tr>
                </thead>
 
                <tbody>
-                  {{#each categories }}
+                  {{#each users }}
                   <tr>
                      <th><span class="custom-checkbox">
                            <input type="checkbox" id="checkbox1" name="option[]" value="1">
                            <label for="checkbox1"></label></th>
-                     <th><a href="/category/detail/{{ _id }}">
-                           {{ categoryname }}
+                     <th><a href="/user/detail/{{ _id }}">
+                           {{ name }}
                         </a></th>
-                     <th>{{ description }}</th>
+                     <th>{{ email }}</th>
+                     <th>{{ password }}</th>
+                     <th>{{ role }}</th>
                      <th>
-                        <a href="/category/edit/{{ _id }}" class="edit" data-toggle="modal">
+                        <a href="/user/edit/{{ _id }}" class="edit" data-toggle="modal">
                            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                         </a>
-                        <a href="/category/delete/{{ _id }}" class="delete" data-toggle="modal">
+                        <a href="/user/delete/{{ _id }}" class="delete" data-toggle="modal">
                            <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                         </a>
                      </th>

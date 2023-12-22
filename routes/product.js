@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/customer', async (req, res) => {
+router.get('/list', async (req, res) => {
     var products = await ProductModel.find({}).populate('brand');
     res.render('product/list', { products });
 })
@@ -68,5 +68,7 @@ router.post('/search', async (req, res) => {
     var products = await ProductModel.find({ model: new RegExp(keyword, "i") }).populate('brand').populate('brand');
     res.render('product/index', { products })
 })
+
+
 
 module.exports = router;
