@@ -5,9 +5,10 @@ var CategoryModel = require('../models/CategoryModel');
 const ProductModel = require('../models/ProductModel');
 
 router.get('/', async (req, res) => {
-    var products = await ProductModel.find({}).populate('brand');
+    var products = await ProductModel.find({}).populate('brand').populate('category');
     res.render('product/index', { products });
-})
+});
+
 
 router.get('/customer', async (req, res) => {
     var products = await ProductModel.find({}).populate('brand');
@@ -16,13 +17,10 @@ router.get('/customer', async (req, res) => {
 
 router.get('/add', async (req, res) => {
     var brands = await BrandModel.find({});
-    res.render('product/add', { brands });
-})
-
-router.get('/add', async (req, res) => {
     var categories = await CategoryModel.find({});
-    res.render('product/add', { categories });
-})
+    res.render('product/add', { brands, categories });
+});
+
 
 router.post('/add', async (req, res) => {
     var product = req.body;
@@ -67,7 +65,7 @@ router.get('/sort/desc', async (req, res) => {
 
 router.post('/search', async (req, res) => {
     var keyword = req.body.keyword;
-    var products = await ProductModel.find({ model: new RegExp(keyword, "i") }).populate('brand');
+    var products = await ProductModel.find({ model: new RegExp(keyword, "i") }).populate('brand').populate('brand');
     res.render('product/index', { products })
 })
 

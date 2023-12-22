@@ -20,10 +20,9 @@ var productChema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'brands'
     },
-
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "categories"
+        ref: 'categories'
     }
 });
 
