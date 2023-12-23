@@ -53,11 +53,6 @@ app.get('/product/list', function (req, res) {
 
 
 
-
-
-
-
-
 // 2
 var mongoose = require('mongoose');
 var url = "mongodb+srv://asm2cloud:asm2cloud@chieulvgch211406.z7lcgau.mongodb.net/ToyStore";
@@ -104,5 +99,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(process.env.PORT || 3001);
 
 module.exports = app;
