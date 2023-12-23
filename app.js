@@ -47,9 +47,9 @@ app.get('/category/add', function (req, res) {
 app.get('/category/edit', function (req, res) {
   res.render('category/edit', { layout: false }); // Render trang không sử dụng layout
 });
-app.get('/product/list', function (req, res) {
-  res.render('product/list', { layout: false }); // Render trang không sử dụng layout
-});
+// app.get('/product/list', function (req, res) {
+//   res.render('product/list', { layout: false }); // Render trang không sử dụng layout
+// });
 
 
 
