@@ -100,6 +100,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//4. config port (for cloud deployment)
 app.listen(process.env.PORT || 3001);
 
 module.exports = app;
